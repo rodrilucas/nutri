@@ -33,7 +33,7 @@ function Search() {
           name="term"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          placeholder="Pesquisar comida"
+          placeholder="Pesquisar Alimento"
           className="w-full pl-14 bg-[#f2f2f2] dark:text-[#949cae] dark:bg-[#1e2939] py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <Icon className="absolute left-6 top-4 before:w-[16px] before:h-[16px] before:bg-[url(/search.svg)]" />
