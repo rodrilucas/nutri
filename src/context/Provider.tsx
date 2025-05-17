@@ -1,5 +1,9 @@
 import { useState, ReactNode, useEffect } from "react";
-import { FoodNutritionData, FoodsResults } from "../schemas/types";
+import {
+  FoodNutritionData,
+  FoodsResults,
+  NutritionData,
+} from "../schemas/types";
 import { initialNutritionData } from "../utils/initialNutritionData";
 import { FoodsContext } from "./FoodsContext";
 
@@ -9,12 +13,20 @@ const Provider = ({ children }: { children: ReactNode }) => {
   });
   const [foodServings, setFoodServings] =
     useState<FoodNutritionData>(initialNutritionData);
+  const {
+    food: {
+      servings: {
+        serving: [data],
+      },
+    },
+  } = foodServings;
   const [currentPage, setCurrentPage] = useState(1);
   const [paginationTerm, setPaginationTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingInfo, setIsLoadingInfo] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [selectedServing, setSelectedServing] = useState<NutritionData>(data);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -40,6 +52,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
     isLoadingInfo,
     isDark,
     isOpen,
+    selectedServing,
     setCurrentPage,
     setPaginationTerm,
     setFoodsResults,
@@ -48,6 +61,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
     setIsDark,
     setIsOpen,
     setIsLoadingInfo,
+    setSelectedServing
   };
 
   return (
