@@ -14,6 +14,7 @@ const AdvancedPagination = ({
 
   const handlePageChange = async (page: number) => {
     if (!paginationTerm || page === currentPage) return;
+    
     setCurrentPage(page);
     const { foods } = await searchFood(paginationTerm, page);
     setFoodsResults({
@@ -50,7 +51,7 @@ const AdvancedPagination = ({
   );
 
   return (
-    <div className="flex flex-col items-center w-full mb-8 gap-4 mt-4 border-t border-[#ebecf0] dark:border-[#1e2939] p-6">
+    <div className="flex flex-col items-center w-full gap-4 dark:border-[#1e2939] p-4">
       <div className="text-sm text-gray-700 dark:text-gray-400">
         <span className="font-semibold text-gray-900 dark:text-white">
           Mostrando{" "}
