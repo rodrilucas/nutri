@@ -70,6 +70,7 @@ type Context = {
   isLoadingInfo: boolean;
   isDark: boolean;
   isOpen: boolean;
+  selectedServing: NutritionData;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   setFoodsResults: React.Dispatch<React.SetStateAction<FoodsResults>>;
   setPaginationTerm: React.Dispatch<React.SetStateAction<string>>;
@@ -78,6 +79,7 @@ type Context = {
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setIsLoadingInfo: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedServing: React.Dispatch<React.SetStateAction<NutritionData>>;
 };
 
 type SkeletonProps = {
@@ -96,7 +98,6 @@ type NotificationProps = {
   type?: "success" | "error" | "info";
   delay: number;
 };
-
 
 type PaginationProps = {
   totalPages: number;
@@ -119,5 +120,5 @@ export type {
   CircleDonutChartProps,
   NotificationProps,
   PaginationProps,
-  ModalProps
+  ModalProps,
 };
