@@ -175,7 +175,7 @@ const NutritionFacts = () => {
             left: hoverInfo.x,
           }}
         >
-          {hoverInfo.label}
+          <p className="max-w-[340px] text-wrap">{hoverInfo.label}</p>
         </div>
       )}
     </div>

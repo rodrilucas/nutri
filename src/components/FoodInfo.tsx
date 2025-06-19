@@ -13,7 +13,7 @@ function FoodInfo() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row p-4 w-full max-w-[950px] mt-2 md:mt-12 my-0 mx-auto justify-between gap-12">
+    <div className="flex flex-col md:flex-row p-4 w-full max-w-[950px] mt-2 md:mt-12 my-0 mx-auto justify-between gap-24">
       <Graphic />
       <NutritionFacts />
     </div>

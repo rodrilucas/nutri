@@ -14,7 +14,7 @@ function SkeletonFoodInfo() {
     );
   });
   return (
-    <div className="flex flex-col md:flex-row p-4 w-full max-w-[950px] mt-16 my-0 mx-auto justify-between gap-12">
+    <div className="flex flex-col md:flex-row p-4 w-full max-w-[950px] mt-16 my-0 mx-auto justify-between gap-24">
       <div className="flex flex-col items-center justify-center px-4 md:w-full md:items-center">
         <div className="w-full flex gap-2 items-center justify-center mb-12">
           <div className="w-12 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
