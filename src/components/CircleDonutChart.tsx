@@ -59,7 +59,7 @@ function CircleDonutChart({ carbs, protein, fat, cal }: CircleDonutChartProps) {
     useAnimateArc(carbsRef.current, circumference, carbsLength);
     useAnimateArc(proteinRef.current, circumference, proteinLength);
     useAnimateArc(fatRef.current, circumference, fatLength);
-  }, [carbs, protein, fat]);
+  }, [carbs, protein, fat, percentCarbs, percentFat, percentProtein]);
 
   return (
     <div className="relative w-full h-full">
