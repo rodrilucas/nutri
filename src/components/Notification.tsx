@@ -10,7 +10,7 @@ const Notification = ({ message, type = "info", delay }: NotificationProps) => {
     }, delay);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [delay]);
 
   const notificationStyles = {
     success: "bg-green-500 text-white",
