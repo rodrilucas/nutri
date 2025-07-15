@@ -77,7 +77,7 @@ const NutritionFacts = () => {
     </div>
   );
 
-  const renderNutrientSection = (data: NutritionData) => [
+  const RenderNutrientSection = (data: NutritionData) => [
     renderNutrientRow(
       "Gordura Total",
       data.fat,
@@ -165,7 +165,7 @@ const NutritionFacts = () => {
 
       <div className="my-2" />
 
-      {renderNutrientSection(selectedServing)}
+      {RenderNutrientSection(selectedServing)}
 
       {hoverInfo && (
         <div
