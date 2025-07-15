@@ -1,7 +1,5 @@
 import useFoodsContext from "../useFoodsContext";
 
-const VITE_API_KEY = import.meta.env.VITE_API_KEY;
-
 function useFatSecret() {
   const { setIsLoading, setIsLoadingInfo } = useFoodsContext();
   const searchFood = async (foodName: string, page = 1) => {
@@ -10,12 +8,7 @@ function useFatSecret() {
       const res = await fetch(
         `https://nutriapi.onrender.com/api/v1/food/search?foodName=${encodeURIComponent(
           foodName
-        )}&page=${page}`,
-        {
-          headers: {
-            "x-api-key": VITE_API_KEY,
-          },
-        }
+        )}&page=${page}`
       );
 
       if (!res.ok) throw new Error("Erro ao buscar alimentos");
@@ -31,14 +24,8 @@ function useFatSecret() {
     setIsLoadingInfo(true);
     try {
       const res = await fetch(
-        `https://nutriapi.onrender.com/api/v1/food/search/${id}`,
-        {
-          headers: {
-            "x-api-key": VITE_API_KEY,
-          },
-        }
+        `https://nutriapi.onrender.com/api/v1/food/search/${id}`
       );
-
       if (!res.ok) throw new Error("Erro ao buscar informações do alimento");
       return await res.json();
     } catch (err) {
