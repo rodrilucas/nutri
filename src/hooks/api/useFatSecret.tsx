@@ -1,6 +1,5 @@
 import useFoodsContext from "../useFoodsContext";
 
-const VITE_PORT = import.meta.env.VITE_PORT;
 const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 function useFatSecret() {
@@ -9,7 +8,7 @@ function useFatSecret() {
     setIsLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:${VITE_PORT}/api/v1/food/search?foodName=${encodeURIComponent(
+        `https://nutriapi.onrender.com/api/v1/food/search?foodName=${encodeURIComponent(
           foodName
         )}&page=${page}`,
         {
@@ -32,7 +31,7 @@ function useFatSecret() {
     setIsLoadingInfo(true);
     try {
       const res = await fetch(
-        `http://localhost:${VITE_PORT}/api/v1/food/search/${id}`,
+        `https://nutriapi.onrender.com/api/v1/food/search/${id}`,
         {
           headers: {
             "x-api-key": VITE_API_KEY,
